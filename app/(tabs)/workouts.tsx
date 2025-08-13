@@ -7,6 +7,8 @@ import { GetWorkoutHistoryUseCase } from '@/src/domain/usecases/workout/GetWorko
 import { SupabaseWorkoutRepository } from '@/src/infrastructure/repositories/SupabaseWorkoutRepository';
 import { WorkoutHistoryCard } from '@/src/presentation/components/workout/WorkoutHistoryCard';
 import { WorkoutStats } from '@/src/presentation/components/workout/WorkoutStats';
+import { LiveWorkoutBanner } from '@/src/presentation/components/workout/LiveWorkoutBanner';
+import { useRealtimeWorkout } from '@/src/presentation/hooks/useRealtimeWorkout';
 
 export default function WorkoutsScreen() {
   const { user } = useAuth();
@@ -18,6 +20,19 @@ export default function WorkoutsScreen() {
   // Initialize use cases
   const workoutRepository = new SupabaseWorkoutRepository();
   const getWorkoutHistoryUseCase = new GetWorkoutHistoryUseCase(workoutRepository);
+
+  // Real-time updates
+  const { connectionStatus, lastUpdate, isConnected } = useRealtimeWorkout({
+    onWorkoutUpdate: (update) => {
+      console.log('📡 Received workout update:', update);
+      
+      // Refresh workout history when workouts are completed
+      if (update.type === 'workout_completed') {
+        loadWorkouts(true);
+      }
+    },
+    enabled: !!user
+  });
 
   const loadWorkouts = async (showRefreshIndicator = false) => {
     if (!user) return;
@@ -140,11 +155,27 @@ export default function WorkoutsScreen() {
         }
       >
         <View style={styles.header}>
-          <Text style={styles.title}>My Workouts</Text>
-          <Text style={styles.subtitle}>Track your fitness progress</Text>
+          <View style={styles.titleRow}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>My Workouts</Text>
+              <Text style={styles.subtitle}>Track your fitness progress</Text>
+            </View>
+            <View style={styles.statusIndicator}>
+              <View style={[styles.statusDot, { backgroundColor: isConnected ? Colors.primary : AppColors.gray400 }]} />
+              <Text style={styles.statusText}>{isConnected ? 'Live' : 'Offline'}</Text>
+            </View>
+          </View>
         </View>
 
         <WorkoutStats workouts={workouts} />
+
+        <LiveWorkoutBanner 
+          lastUpdate={lastUpdate}
+          onPress={() => {
+            // TODO: Navigate to active workout
+            console.log('Navigate to active workout:', lastUpdate?.workoutSessionId);
+          }}
+        />
 
         <View style={styles.historySection}>
           <Text style={styles.sectionTitle}>Recent Workouts</Text>
@@ -179,6 +210,14 @@ const styles = StyleSheet.create({
   header: {
     marginBottom: 24,
   },
+  titleRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+  },
+  titleContainer: {
+    flex: 1,
+  },
   title: {
     fontSize: 32,
     fontWeight: '700',
@@ -188,6 +227,25 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 16,
     color: AppColors.gray400,
+  },
+  statusIndicator: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: AppColors.gray800,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  statusDot: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginRight: 6,
+  },
+  statusText: {
+    fontSize: 12,
+    color: AppColors.gray300,
+    fontWeight: '500',
   },
   historySection: {
     flex: 1,

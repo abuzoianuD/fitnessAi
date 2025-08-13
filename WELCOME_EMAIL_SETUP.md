@@ -27,8 +27,6 @@ This guide will help you complete the welcome email automation setup using Supab
    - Copy the API key (starts with `re_`)
    - **Save this key securely - you'll need it later**
 
-   re_cc36wVo5_5jn2CsyZQLK8PuXzvBEphbZ3
-
 3. **Set up Domain (Optional but Recommended)**:
    - In Resend dashboard, go to **Domains**
    - Add your domain (e.g., `fitai.app`)
