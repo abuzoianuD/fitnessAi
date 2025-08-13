@@ -1,0 +1,191 @@
+{
+  "languageSelection": {
+    "title": "Select your language",
+    "instruction": "Choose the language you want to use in the app.",
+    "continue": "Continue"
+  },
+  "onboarding": {
+    "welcome": "Welcome to FitAI",
+    "subtitle": "Your AI personal trainer is ready to create a personalized fitness journey just for you.",
+    "getStarted": "Get Started",
+    "next": "Next"
+  },
+  "userProfile": {
+    "steps": {
+      "name": {
+        "title": "What's your name?",
+        "subtitle": "Your AI trainer would love to know what to call you.",
+        "placeholder": "Enter your name"
+      },
+      "basic": {
+        "title": "Tell us about yourself",
+        "subtitle": "This helps us personalize your experience."
+      },
+      "physical": {
+        "title": "Physical information",
+        "subtitle": "We'll use this to calculate accurate recommendations."
+      },
+      "activity": {
+        "title": "Activity level",
+        "subtitle": "How active are you currently in your daily life?"
+      }
+    },
+    "age": "Age",
+    "height": "Height",
+    "weight": "Weight",
+    "gender": {
+      "title": "Gender",
+      "male": "Male",
+      "female": "Female", 
+      "other": "Other",
+      "preferNotToSay": "Prefer not to say"
+    },
+    "activity": {
+      "sedentary": {
+        "title": "Sedentary",
+        "desc": "Mostly sitting, little to no exercise"
+      },
+      "lightlyActive": {
+        "title": "Lightly Active", 
+        "desc": "Light exercise 1-3 days/week"
+      },
+      "moderatelyActive": {
+        "title": "Moderately Active",
+        "desc": "Moderate exercise 3-5 days/week"
+      },
+      "veryActive": {
+        "title": "Very Active",
+        "desc": "Hard exercise 6-7 days/week"
+      },
+      "extremelyActive": {
+        "title": "Extremely Active",
+        "desc": "Physical job + exercise daily"
+      }
+    }
+  },
+  "goals": {
+    "steps": {
+      "primaryGoal": "What's your main goal?",
+      "secondaryGoals": "Any other goals?",
+      "fitnessLevel": "What's your fitness level?",
+      "frequency": "How often do you want to work out?"
+    },
+    "primaryGoalSubtitle": "This will be the focus of your personalized plan.",
+    "secondaryGoalsSubtitle": "Select any additional goals you'd like to work on.",
+    "fitnessLevelSubtitle": "Be honest - we'll adapt everything to your level.",
+    "frequencySubtitle": "We'll create a schedule that fits your lifestyle.",
+    "loseWeight": {
+      "title": "Lose Weight",
+      "desc": "Burn fat and reach your ideal weight"
+    },
+    "buildMuscle": {
+      "title": "Build Muscle",
+      "desc": "Gain lean muscle mass and definition"
+    },
+    "getStronger": {
+      "title": "Get Stronger", 
+      "desc": "Increase strength and power"
+    },
+    "improveEndurance": {
+      "title": "Improve Endurance",
+      "desc": "Boost cardiovascular fitness"
+    },
+    "generalFitness": {
+      "title": "General Fitness",
+      "desc": "Overall health and well-being"
+    }
+  },
+  "fitnessLevel": {
+    "beginner": {
+      "title": "Beginner",
+      "desc": "New to fitness or getting back into it"
+    },
+    "intermediate": {
+      "title": "Intermediate",
+      "desc": "Regular exercise experience"
+    },
+    "advanced": {
+      "title": "Advanced", 
+      "desc": "Experienced with consistent training"
+    }
+  },
+  "workoutFrequency": {
+    "once": "Once a week",
+    "twice": "Twice a week", 
+    "three": "3 times a week",
+    "four": "4 times a week",
+    "five": "5 times a week",
+    "six": "6 times a week",
+    "daily": "Every day"
+  },
+  "preferences": {
+    "steps": {
+      "workoutTypes": "What type of workouts do you enjoy?",
+      "duration": "How long do you want to work out?",
+      "gymAccess": "Do you have access to a gym?",
+      "equipment": "What equipment do you have access to?",
+      "coaching": "What coaching style do you prefer?"
+    },
+    "workoutTypesSubtitle": "Select all that interest you.",
+    "durationSubtitle": "Choose your preferred workout length.",
+    "gymAccessSubtitle": "This helps us tailor your workout location.",
+    "equipmentSubtitle": "Select all equipment you have available.",
+    "coachingSubtitle": "Choose how your AI trainer should communicate with you.",
+    "meetYourAI": "Meet Your AI Trainer",
+    "workoutTypes": {
+      "strength": "Strength",
+      "cardio": "Cardio",
+      "flexibility": "Flexibility",
+      "sports": "Sports",
+      "bodyweight": "Bodyweight"
+    },
+    "duration": {
+      "quick": "Quick Session",
+      "standard": "Standard Session", 
+      "intensive": "Intensive Session",
+      "extended": "Extended Session",
+      "marathon": "Marathon Session"
+    },
+    "gymAccess": {
+      "yes": "Yes, I have gym access",
+      "yesDesc": "Access to a full gym with equipment",
+      "no": "No, home workouts only",
+      "noDesc": "Workouts I can do at home"
+    },
+    "equipment": {
+      "dumbbells": "Dumbbells",
+      "barbell": "Barbell",
+      "resistanceBands": "Resistance Bands",
+      "pullUpBar": "Pull-up Bar",
+      "kettlebells": "Kettlebells", 
+      "yogaMat": "Yoga Mat",
+      "cardioMachine": "Cardio Machine",
+      "none": "No Equipment"
+    },
+    "coaching": {
+      "motivational": {
+        "title": "Motivational",
+        "desc": "Energetic encouragement and motivation"
+      },
+      "analytical": {
+        "title": "Analytical",
+        "desc": "Data-driven insights and detailed feedback"
+      },
+      "casual": {
+        "title": "Casual",
+        "desc": "Friendly and relaxed communication"
+      },
+      "professional": {
+        "title": "Professional", 
+        "desc": "Structured and goal-focused approach"
+      }
+    }
+  },
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "skip": "Skip",
+    "minutes": "minutes"
+  }
+}
